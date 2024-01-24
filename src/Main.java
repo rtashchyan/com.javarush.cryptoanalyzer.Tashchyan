@@ -13,22 +13,27 @@ import java.util.Scanner;
 
 
                 Scanner scanner = new Scanner(System.in);
-                while (scanner.nextInt()!= 0) {
-                    if (scanner.nextInt()== 1) {
+                int command = scanner.nextInt();
+                while (true) {
+                    if (command == 1) {
                         Encryptor encryptor = new Encryptor(alphabet);
 
                         encryptor.encrypt();
                         break;
-                    } else if (scanner.nextInt()==2) {
+                    } else if (command ==2) {
                         DecryptionMain decryptionMain = new DecryptionMain(alphabet);
                         decryptionMain.decryptor();
                         break;
-                    } else if(scanner.nextInt() == 3) {
+                    } else if(command  == 3) {
                         CaesarBreaker caesarBreaker = new  CaesarBreaker(alphabet);
                         caesarBreaker.bruteforce();
                         break;
-                    }else{
+                    } else if (command == 0) {
+                        System.out.println("программа завершена");
                         break;
+
+                    } else{
+                        throw new RuntimeException("неверная команда");
                     }
                 }
 

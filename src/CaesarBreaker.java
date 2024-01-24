@@ -41,7 +41,7 @@ import java.util.Scanner;
             StringBuilder result = new StringBuilder();
 
             for (char ch : input.toCharArray()) {
-                if (Character.isLetter(ch) || ch == ' ' || ch == '\n') {
+                if (Character.isLetter(ch)) {
                     for (int i = 0; i < alphabet.getRussianAlphabet().length; i++) {
                         if (Character.toLowerCase(ch) == alphabet.getRussianAlphabet()[i]) {
                             int decryptedIndex = (i - shift + alphabet.getRussianAlphabet().length) % alphabet.getRussianAlphabet().length;
